@@ -23,41 +23,49 @@ PHPに関する設定は以下で変更できます。
 ```
 ここでは以下の項目を変更しておきましょう。
 - エラーの出力レベルを設定
+
 ```
 	error_reporting = E_ALL & ~E_DEPRECATED&~E_NOTICE
 ```
 - HTTPレスポンスヘッダで通知する文字エンコーディングを指定
+
 ```
 	default_charset = "UTF-8"
 ```
 - タイムゾーンの設定
+
 ```
 	date.timezone = Asia/Tokyo
 ```
-- PHP内でマルチバイト文字を扱う際の設定
 - mb_send_mail関数を利用する時に使用するパラメータ
+
 ```
 	mbstring.language = Japanese
 ```
 - mbstring関数のデフォルトエンコード
+
 ```
 	mbstring.internal_encoding = UTF-8
 ```
 - 自動変換によるトラブル防止のため、自動変換させない設定
+
 ```
 	mbstring.http_input = pass
 	mbstring.http_output = pass
 	mbstring.encoding_translation = Off
 ```
 - 文字コード検出順序
+
 ```
 	mbstring.detect_order = UTF-8,SJIS,EUC-JP,JIS,ASCII
 ```
 - 文字コード変換に失敗した時の代替え文字。何もしないのnone
+
 ```
 	mbstring.substitute_character = none;
 ```
 設定ファイルの変更を有効にするにはApacheを再起動させる必要があります。
+
 ```
 	/etc/init.d/httpd restart
 ```
